@@ -1,8 +1,21 @@
-import React from 'react'
-import { IRoutes, routeTemplate } from 'Interfaces'
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Libraries
+  import React from 'react'
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Interfaces
+  import {
+    IObject as IO,
+    IRoute,
+    IRoutes,
+    routeTemplate,
+    routesTemplate,
+  } from 'Interfaces'
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Project
+  import * as PAGES from 'Pages'
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Sub components
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
-// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ routes
 export const routes:IRoutes = {
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
   CustomPageTemplate: {
     ...routeTemplate,
     path: '/template',
@@ -17,7 +30,59 @@ export const routes:IRoutes = {
     roleAccessList: [],
     component: <div></div>,
   },
-};
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ APP CORE
+  Index: {
+    ...routeTemplate,
+    path: '/',
+    title: 'Index',
+    roleRequired: false,
+    component: <PAGES.HomeIndex />,
+  },
 
-// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+  AuthLogin: {
+    ...routeTemplate,
+    path: '/login',
+    title: 'Login',
+    roleRequired: false,
+    component: <PAGES.AuthLogin />,
+  },
+
+  AuthLoginMode: {
+    ...routeTemplate,
+    pathMaker: (params:IO) => `/login/${params.mode}`,
+    path: '/login/:mode',
+    title: 'Login',
+    roleRequired: false,
+    component: <PAGES.AuthLogin />,
+  },
+
+  AuthLogout: {
+    ...routeTemplate,
+    path: '/logout',
+    title: 'Logout',
+    roleRequired: false,
+    component: <PAGES.AuthLogout />,
+  },
+
+  AuthProfile: {
+    ...routeTemplate,
+    path: '/profile',
+    title: 'Profile',
+    roleRequired: true,
+    component: <PAGES.AuthProfile />,
+  },
+
+  AuthHome: {
+    ...routeTemplate,
+    path: '/home',
+    title: 'Home',
+    roleRequired: false,
+    component: <PAGES.HomeIndex />,
+  },
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PROJECT PAGES
+
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+}; // end of routes
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
 export default routes

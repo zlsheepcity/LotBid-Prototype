@@ -14,6 +14,8 @@
       "Interfaces/*": ["src/interfaces/*"],
       "Pages": ["src/pages"],
       "Pages/*": ["src/pages/*"],
+      "Parts": ["src/parts"],
+      "Parts/*": ["src/parts/*"],
       "Utils": ["src/utils"],
       "Utils/*": ["src/utils/*"],
       "Src/*": ["src/*"]

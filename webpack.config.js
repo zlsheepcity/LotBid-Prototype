@@ -3,11 +3,16 @@ const DotenvPlugin = require('dotenv-webpack')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const CopyWebPackPlugin = require('copy-webpack-plugin')
 
-//nom: adsf
+const APPTITLE = 'APP!'
+const APPPATH_ENV    = './.env'
+const APPPATH_ENTRY  = './src/index.tsx'
+const APPPATH_HTML   = './src/index.html'
+const APPPATH_PUBLIC = './public_html'
+
 module.exports = (env) =>{
   return {
     mode: 'development',
-    entry: './src/index.tsx',
+    entry: APPPATH_ENTRY,
     output: {
       publicPath: '/',
       filename: './app.js'
@@ -15,22 +20,23 @@ module.exports = (env) =>{
     resolve: {
       extensions: ['.ts', '.js', '.tsx', '.jsx', '.json'],
       alias: {
+        Pages: path.resolve(__dirname, 'src/pages/'),
+        Parts: path.resolve(__dirname, 'src/parts/'),
         Assets: path.resolve(__dirname, 'src/assets/'),
         Auth: path.resolve(__dirname, 'src/auth/'),
         Data: path.resolve(__dirname, 'src/data/'),
         Components: path.resolve(__dirname, 'src/components/'),
         Interfaces: path.resolve(__dirname, 'src/interfaces/'),
-        Pages: path.resolve(__dirname, 'src/pages/'),
         Utils: path.resolve(__dirname, 'src/utils/'),
         Src: path.resolve(__dirname, 'src/')
       },
     },
     plugins: [
-      new DotenvPlugin({ path:'./.env' }),
-      new CopyWebPackPlugin({ patterns:[{from:'public'}] }),
+      new DotenvPlugin({path:APPPATH_ENV}),
+      new CopyWebPackPlugin({patterns:[{from:APPPATH_PUBLIC}]}),
       new HtmlWebPackPlugin({
-        title: 'WebPackApp',
-        template: path.resolve(__dirname, 'src/index.html'),
+        title: APPTITLE,
+        template: path.resolve(__dirname,APPPATH_HTML),
       }),
     ],
     module: {

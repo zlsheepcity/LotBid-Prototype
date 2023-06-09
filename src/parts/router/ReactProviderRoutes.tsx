@@ -10,8 +10,11 @@ import {
   IRoute,
   IRoutes
 } from 'Interfaces'
-import { routes } from './routes'
+
+import { routesListNormalize } from './utils'
 import { ProtectedRoute } from './ProtectedRoute'
+
+import { routes } from 'Src/AppRoutes'
 import { Error404 as Error404Page } from 'Pages'
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Convert routes
@@ -57,7 +60,7 @@ export const useRoutesProvider = () => React.useContext(RoutesContext);
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Provider component
 
 export const ReactProviderRoutes:React.FC = () => {
-  const [routesList, setRoutesList] = React.useState<IRoutes>(routesKeyAdded)
+  const [routesList, setRoutesList] = React.useState<IRoutes>(routesListNormalize(routes))
   const value = {
     ...initialRoutesContext,
     routes: routesList,
