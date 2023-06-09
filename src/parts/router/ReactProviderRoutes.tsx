@@ -1,29 +1,26 @@
-import React from 'react'
-import {
-  createBrowserRouter,
-  RouterProvider,
-  RouteObject as IRouteObject,
-} from 'react-router-dom'
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Libraries
+  import React from 'react'
+  import {
+    createBrowserRouter,
+    RouterProvider,
+    RouteObject as IRouteObject,
+  } from 'react-router-dom'
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Interfaces
+  import {
+    IObject as IO,
+    IRoute, routeTemplate,
+    IRoutes, routesTemplate,
+  } from 'Interfaces'
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Project
+  import { routes } from 'Src/AppRoutes'
+  import { Error404 as Error404Page } from 'Pages'
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Sub components
+  import { routesListNormalize } from './utils'
+  import { ProtectedRoute } from './ProtectedRoute'
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
-import {
-  IObject as IO,
-  IRoute,
-  IRoutes
-} from 'Interfaces'
 
-import { routesListNormalize } from './utils'
-import { ProtectedRoute } from './ProtectedRoute'
-
-import { routes } from 'Src/AppRoutes'
-import { Error404 as Error404Page } from 'Pages'
-
-// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Convert routes
-
-const routesKeyAdded: IRoutes = {...routes}
-
-Object.keys(routesKeyAdded).forEach(
-  key => routesKeyAdded[key] = { ...routesKeyAdded[key], key }
-)
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ React router
 
 const routesForReactRouter:IRouteObject[] = [
 
@@ -38,12 +35,9 @@ const routesForReactRouter:IRouteObject[] = [
   // append special routes
   { path: '*', element: <Error404Page /> }
 ]
-
-// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ React router
-
 const router = createBrowserRouter(routesForReactRouter)
 
-// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Context
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Context
 
 export interface IRoutesContext {
   routes: IRoutes;

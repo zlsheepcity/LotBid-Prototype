@@ -3,10 +3,8 @@
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Interfaces
   import {
     IObject as IO,
-    IRoute,
-    IRoutes,
-    routeTemplate,
-    routesTemplate,
+    IRoute, routeTemplate,
+    IRoutes, routesTemplate,
   } from 'Interfaces'
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Project
   import * as PAGES from 'Pages'
