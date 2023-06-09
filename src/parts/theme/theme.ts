@@ -3,25 +3,28 @@
  */
 
 export const theme = {
-  // palette: {
-  //   primary: {
-  //     main: 'hsla(264, 30%, 41%, 1)',
-  //   },
-  // },
+   palette: {
+     primary: {
+       main: 'hsl(195, 54%, 28%)',
+     },
+   },
   typography: {
     button: {
+      // Disable default CAPITALIZE for buttons
       textTransform: 'none' as const
     }
   },
   components: {
     MuiButton: {
       defaultProps: {
+        // Set default button look
         variant: 'outlined' as const
       },
       styleOverrides: {
-        outlined: {
-          // backgroundColor: '#fff',
-        }
+        // Style configuration example
+        // outlined: {
+        //   backgroundColor: '#fff',
+        // }
       }
     }
   }

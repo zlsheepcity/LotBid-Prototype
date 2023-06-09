@@ -11,7 +11,7 @@ import {
 
 export const routesListNormalize = (routes:IRoutes = {}):IRoutes => {
   return Object.entries(routes).reduce(
-    (normalizedRoutes:IRoutes, [key,route]:[key:string;route:IRoute]) => ({
+    (normalizedRoutes:IRoutes, [key,route]) => ({
           ...normalizedRoutes, [key]: {
             ...routeTemplate,  // base layer
             ...route,          // current data layer

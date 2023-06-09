@@ -1,5 +1,5 @@
 import { IObject as IO } from 'Interfaces'
-import { AUTH_ROLE } from 'Auth'
+import { AUTH_ROLE } from './authRole'
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ IAuthUser
 

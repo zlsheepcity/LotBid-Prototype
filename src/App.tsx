@@ -1,13 +1,17 @@
-import React from 'react'
-import { ReactProviderRoutes } from 'Components/Router'
-import {
-  ReactProviderAuth,
-  IAuthUser,
-  authUserGet,
-  authUserTemplate,
-} from 'Auth'
-import { ReactProviderTheme } from 'Src/ui/ReactProviderTheme'
-import { ReactProviderRedux } from 'Components/Redux'
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Libraries
+  import React from 'react'
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Project
+  import {
+    ReactProviderAuth,
+    IAuthUser,
+    authUserGet,
+    authUserTemplate,
+  } from 'Auth'
+  import { ReactProviderRoutes } from 'Parts/router'
+  import { ReactProviderTheme  } from 'Parts/theme'
+  import { ReactProviderRedux  } from 'Components/Redux'
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
 
 //nom:AppProviderDefault
 export const AppDefault:React.FC = () => {
