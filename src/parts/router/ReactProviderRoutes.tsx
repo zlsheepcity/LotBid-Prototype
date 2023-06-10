@@ -2,6 +2,7 @@
   import React from 'react'
   import {
     createBrowserRouter,
+    createHashRouter,
     RouterProvider,
     RouteObject as IRouteObject,
   } from 'react-router-dom'
@@ -36,9 +37,10 @@ const routesForReactRouter:IRouteObject[] = [
   // append special routes
   { path: '*', element: <Error404Page /> }
 ]
-const basename = process.env.APP_BASENAME || AppConfig.APP_BASENAME
-console.log('router basename:',basename)
-const router = createBrowserRouter(routesForReactRouter, {basename})
+//const basename = process.env.APP_BASENAME || AppConfig.APP_BASENAME
+//console.log('router basename:',basename)
+//const router = createBrowserRouter(routesForReactRouter, {basename})
+const router = createHashRouter(routesForReactRouter)
 
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Context
 
