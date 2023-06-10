@@ -13,14 +13,14 @@
     IRoutes, routesTemplate,
   } from 'Interfaces'
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Project
-  import { AppConfig } from 'Src/AppConfig'
   import { routes } from 'Src/AppRoutes'
   import { Error404 as Error404Page } from 'Pages'
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Sub components
   import { routesListNormalize } from './utils'
   import { ProtectedRoute } from './ProtectedRoute'
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Re export
+  export { Link } from "react-router-dom"
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-
 
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ React router
 
@@ -37,9 +37,6 @@ const routesForReactRouter:IRouteObject[] = [
   // append special routes
   { path: '*', element: <Error404Page /> }
 ]
-//const basename = process.env.APP_BASENAME || AppConfig.APP_BASENAME
-//console.log('router basename:',basename)
-//const router = createBrowserRouter(routesForReactRouter, {basename})
 const router = createHashRouter(routesForReactRouter)
 
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ Context

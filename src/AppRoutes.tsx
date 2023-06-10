@@ -78,7 +78,13 @@ export const routes:IRoutes = {
     component: <PAGES.HomeIndex />,
   },
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ PROJECT PAGES
-
+  Landing: {
+    ...routeTemplate,
+    path: '/landing',
+    title: 'Landing',
+    roleRequired: false,
+    component: <PAGES.LandingPage />,
+  },
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 }; // end of routes
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~

@@ -1,6 +1,5 @@
 export * from './interfaces'
 export * from './utils'
-export * from './routes'
 export * from './ReactProviderRoutes'
 export * from './ProtectedRoute'
 export * from './ProtectedOutlet'

@@ -5,13 +5,13 @@ import { PageContainer } from 'Components'
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
-// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 const Page:React.FC = () => {
   return (
     <PageContainer>
-      HomePublicPage--
+      Landing
       <ul>
-        <li><Link to="/landing">/landing</Link></li>
+        <li><Link to="/">/home</Link></li>
       </ul>
       <Stack spacing={2} direction="row">
         <Button variant="text">Text</Button>
@@ -22,6 +22,6 @@ const Page:React.FC = () => {
   )
 }
 
-// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-export const HomePublic = Page
-export default HomePublic
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+export const LandingPage = Page
+export default LandingPage

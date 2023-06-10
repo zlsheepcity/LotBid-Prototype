@@ -2,7 +2,6 @@
 const AppConfigCore = {
   v: '0.0', // version
   developerMode: true,
-  APP_BASENAME: '/LotBid-Prototype/dist/', // default: '/',
 };
 
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
