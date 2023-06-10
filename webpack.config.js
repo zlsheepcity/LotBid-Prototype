@@ -14,7 +14,7 @@ module.exports = (env) =>{
     mode: 'development',
     entry: APPPATH_ENTRY,
     output: {
-      publicPath: '/',
+      publicPath: './',
       filename: './app.js'
     },
     resolve: {
