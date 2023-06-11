@@ -15,54 +15,47 @@ import IconButton from '@mui/material/IconButton';
 import CachedIcon from '@mui/icons-material/Cached';
 import CircleIcon from '@mui/icons-material/Circle';
 
-import { IObject as IO } from 'Interfaces'
-export interface ILot extends IO {
-  title: string; //'Cirsma nr. 17656'
-  place: string; //'Skujenes pagasts, Vecskujas'
-  volume: number; //m³
-  bidCurrent: number; //€
-  deadline: string; //Date
-  active: boolean;
-  distanceUser: number; //km
-  checkTimeUser: string; //Date
-  bidUser: number; //€
-}
-export const emptyLot:ILot = {
-  title: '',
-  place: '',
-  volume: 0,
-  distanceUser: 0,
-  bidCurrent: 0,
-  bidUser: 0,
-  deadline: '',
-  checkTimeUser: '',
-  active: false,
-}
+import { ILot, emptyLot } from './interfaces'
 
-const lot = {
-  ...emptyLot,
-  title: 'Cirsma nr. 17656',
-  place: 'Skujenes pagasts, Vecskujas',
-  volume: 100,
-  distanceUser: 56,
-  bidCurrent: 1240,
-  bidUser: 1240,
-  deadline: '2023.07.02, 08:24',
-  checkTimeUser: '07:40',
-  active: true,
-}
+//const lot = {
+//  ...emptyLot,
+//  title: 'Cirsma nr. 17656',
+//  place: 'Skujenes pagasts, Vecskujas',
+//  volume: 100,
+//  distanceUser: 56,
+//  bidCurrent: 1240,
+//  bidUser: 1240,
+//  deadline: '2023.07.02, 08:24',
+//}
 
 const LotTitle:React.FC<{lot:ILot}> = ({lot}) => {
   return <span>{`${lot.title}`}</span>
 }
 const LotPlace:React.FC<{lot:ILot}> = ({lot}) => {
-  return <span>{`${lot.place}`}</span>
+  return (
+    <Box
+      component="span"
+      sx={{
+        whiteSpace:'nowrap',
+        textOverflow:'ellipsis',
+        overflow:'hidden',
+        display:'block',
+      }}
+      children={`${lot.place}`}
+      />
+  )
 }
 const LotVolume:React.FC<{lot:ILot}> = ({lot}) => {
-  return <span>{`${lot.volume} m³`}</span>
+  return (
+    <Box
+      component="span"
+      sx={{whiteSpace:'nowrap'}}
+      children={`${lot.volume} m³`}
+      />
+  )
 }
 const LotDistance:React.FC<{lot:ILot}> = ({lot}) => {
-  return <span>{`${lot.distanceUser} km`}</span>
+  return <Box component="span" sx={{whiteSpace:'nowrap'}}>{`${lot.distanceUser} km`}</Box>
 }
 const LotCheckTimeUser:React.FC<{lot:ILot}> = ({lot}) => {
   return (
@@ -75,7 +68,7 @@ const LotCheckTimeUser:React.FC<{lot:ILot}> = ({lot}) => {
 }
 const LotDeadline:React.FC<{lot:ILot}> = ({lot}) => {
   return (
-    <Stack direction="row">
+    <Stack direction="row" component="span">
       <Typography
         variant="caption"
         children="deadline:"
@@ -111,7 +104,7 @@ const LotBid:React.FC<{lot:ILot}> = ({lot}) => {
         <Typography
           sx={sxCurrent}
           variant="caption"
-          children={`€${lot.bidCurrent}`}
+          children={`${lot.bidCurrent}€`}
           />
       </Stack>
       {bidUserExist && (
@@ -123,7 +116,7 @@ const LotBid:React.FC<{lot:ILot}> = ({lot}) => {
         <Typography
           sx={sxUser}
           variant="caption"
-          children={`€${lot.bidUser}`}
+          children={`${lot.bidUser}€`}
           />
       </Stack>
       )}
@@ -131,7 +124,11 @@ const LotBid:React.FC<{lot:ILot}> = ({lot}) => {
   )
 }
 
-const Component:React.FC = () => {
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+interface IProps {
+  lot: ILot;
+}
+const Component:React.FC<IProps> = ({lot}) => {
   return (
     <List dense>
       <ListItem>
@@ -140,7 +137,7 @@ const Component:React.FC = () => {
           secondary={<LotPlace lot={lot}/>}
           />
         <ListItemText
-          sx={{textAlign:'right'}}
+          sx={{textAlign:'right',alignSelf:'start'}}
           primary={<LotVolume lot={lot}/>}
           secondary={<LotDistance lot={lot}/>}
           />
@@ -151,6 +148,7 @@ const Component:React.FC = () => {
           primary={<LotBid lot={lot}/>}
           secondary={<LotDeadline lot={lot}/>}
           />
+        {lot.active && (
         <Box sx={{alignSelf:'start'}}>
           <LotCheckTimeUser lot={lot}/>
           <IconButton
@@ -159,6 +157,7 @@ const Component:React.FC = () => {
              children={<CachedIcon fontSize="small" />}
              />
         </Box>
+        )}
 
       </ListItem>
     </List>

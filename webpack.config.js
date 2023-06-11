@@ -7,7 +7,7 @@ const APPTITLE = 'APP!'
 const APPPATH_ENV    = './.env'
 const APPPATH_ENTRY  = './src/index.tsx'
 const APPPATH_HTML   = './src/index.html'
-const APPPATH_PUBLIC = './public_html'
+const APPPATH_PUBLIC = './public'
 
 module.exports = (env) =>{
   return {
