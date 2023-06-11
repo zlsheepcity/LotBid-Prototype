@@ -1,1 +1,8 @@
 /* global styles */
+
+:root {
+  --color-primary:   hsl(195, 54%, 28%);
+  --color-secondary: hsl( 53, 70%, 76%);
+  --color-positive:  hsl(179, 60%, 35%);
+  --color-negative:  hsl(348, 35%, 49%);
+}

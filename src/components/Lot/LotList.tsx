@@ -33,15 +33,15 @@ const Component:React.FC = () => {
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6} md={4} lg={3}>
 
-          <Card sx={{ maxWidth: 345 }}>
+          <Card>
             <CardMedia
-              sx={{ height: 140, background:'hsl( 53, 70%, 76%)' }}
+              sx={{ height:120, background:'var(--color-secondary)' }}
               image="/static/images/cards/contemplative-reptile.jpg"
               title="green iguana"
             />
             <LotReport />
             <CardActions>
-              <Button size="small">Open details</Button>
+              <Button size="small">Lot details</Button>
               <Box sx={{ml:'auto'}}>
                 <FormControlLabel
                   control={<Switch defaultChecked />}
@@ -61,7 +61,7 @@ const Component:React.FC = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={4} lg={3}>
 
-          <Card sx={{ maxWidth: 345 }}>
+          <Card>
             <CardMedia
               sx={{ height: 140, background:'hsl( 53, 70%, 76%)' }}
               image="/static/images/cards/contemplative-reptile.jpg"
@@ -102,7 +102,7 @@ const Component:React.FC = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={4} lg={3}>
 
-          <Card sx={{ maxWidth: 345 }}>
+          <Card>
             <CardMedia
               sx={{ height: 140, background:'hsl( 53, 70%, 76%)' }}
               image="/static/images/cards/contemplative-reptile.jpg"
