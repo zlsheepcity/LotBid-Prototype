@@ -9,3 +9,4 @@ export * from './AppCore/Error404'
 
 // Pages
 export * from './Landing'
+export * from './Registration'

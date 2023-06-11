@@ -18,7 +18,10 @@ import AdbIcon from '@mui/icons-material/Adb';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 
-const pages = ['Landing page', 'Participant registration'];
+const menuPages = [
+  {title:'Landing page',path:'/landing'},
+  {title:'Participant registration',path:'/registration'},
+]
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
@@ -91,9 +94,14 @@ const Component:React.FC = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {menuPages.map(({title,path}, indexKey) => (
+                <MenuItem key={indexKey} onClick={handleCloseNavMenu}>
+                  <Link to={path} style={{
+                      textDecoration:'none',
+                      color:'inherit',
+                    }}>
+                    <Typography textAlign="center">{title}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -116,14 +124,17 @@ const Component:React.FC = () => {
             />
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
+            {menuPages.map(({title,path}, indexKey) => (
+              <Link to={path} key={indexKey} style={{
+                  textDecoration:'none',
+                  color:'inherit',
+                }}>
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: 'white', display: 'block' }}
+                  children={title}
+                  />
+              </Link>
             ))}
           </Box>
 

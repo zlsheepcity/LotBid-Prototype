@@ -85,6 +85,13 @@ export const routes:IRoutes = {
     roleRequired: false,
     component: <PAGES.LandingPage />,
   },
+  Registration: {
+    ...routeTemplate,
+    path: '/registration',
+    title: 'Registration',
+    roleRequired: false,
+    component: <PAGES.RegistrationPage />,
+  },
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 }; // end of routes
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~

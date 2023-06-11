@@ -11,6 +11,10 @@ export * from './Lot/LotListActiveNow'
 export * from './Lot/LotRequest'
 export * from './Lot/LotCard'
 export * from './Lot/LotReport'
+export * from './Registration/RegistrationForm'
+export * from './Registration/FormPartContact'
+export * from './Registration/FormPartCompany'
+export * from './Registration/FormPartPayment'
 // UI components
 export * from './Designed/DesignedTitle'
 

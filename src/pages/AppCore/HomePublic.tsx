@@ -9,15 +9,11 @@ import Button from '@mui/material/Button';
 const Page:React.FC = () => {
   return (
     <PageContainer>
-      HomePublicPage--
+      HomePublicPage
       <ul>
         <li><Link to="/landing">/landing</Link></li>
+        <li><Link to="/registration">/registration</Link></li>
       </ul>
-      <Stack spacing={2} direction="row">
-        <Button variant="text">Text</Button>
-        <Button variant="contained">Contained</Button>
-        <Button variant="outlined">Outlined</Button>
-      </Stack>
     </PageContainer>
   )
 }
