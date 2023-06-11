@@ -83,6 +83,10 @@ const LotDeadline:React.FC<{lot:ILot}> = ({lot}) => {
 const LotBid:React.FC<{lot:ILot}> = ({lot}) => {
   const bidUserExist = lot.bidUser > 0
   const bidUserWinning = lot.bidUser > 0 && lot.bidUser===lot.bidCurrent
+  const priceForUnit = lot.bidCurrent && lot.volume
+    ? (lot.bidCurrent/lot.volume).toFixed(2)
+    : 0
+  const priceForUnitLabel = priceForUnit ? `(${priceForUnit} €/m³)`:``
   const sxCurrent = bidUserWinning? {
     color: 'var(--color-positive)',
     fontWeight: 'bolder',
@@ -104,7 +108,7 @@ const LotBid:React.FC<{lot:ILot}> = ({lot}) => {
         <Typography
           sx={sxCurrent}
           variant="caption"
-          children={`${lot.bidCurrent}€`}
+          children={`${lot.bidCurrent}€ ${priceForUnitLabel}`}
           />
       </Stack>
       {bidUserExist && (
