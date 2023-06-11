@@ -11,7 +11,7 @@ export const TheLots = [
     bidCurrent: 0,
     bidUser: 0,
     deadline: '2023.07.03, 17:11',
-    geomapImageSrc: '/geomap.png',
+    geomapImageSrc: './geomap.png',
   },
   {
     ...emptyLot,
@@ -22,7 +22,7 @@ export const TheLots = [
     bidCurrent: 800,
     bidUser: 0,
     deadline: '2023.07.03, 16:10',
-    geomapImageSrc: '/geomap3.png',
+    geomapImageSrc: './geomap3.png',
   },
   {
     ...emptyLot,
@@ -33,7 +33,7 @@ export const TheLots = [
     bidCurrent: 1240,
     bidUser: 1240,
     deadline: '2023.07.02, 08:24',
-    geomapImageSrc: '/geomap.png',
+    geomapImageSrc: './geomap.png',
     notifyUser: true,
   },
   {
@@ -45,7 +45,7 @@ export const TheLots = [
     bidCurrent: 1620,
     bidUser: 1600,
     deadline: '2023.07.02, 16:32',
-    geomapImageSrc: '/geomap2.png',
+    geomapImageSrc: './geomap2.png',
   },
   {
     ...emptyLot,
@@ -56,7 +56,7 @@ export const TheLots = [
     bidCurrent: 0,
     bidUser: 0,
     deadline: '2023.07.02, 16:10',
-    geomapImageSrc: '/geomap2.png',
+    geomapImageSrc: './geomap2.png',
   },
   {
     ...emptyLot,
@@ -67,7 +67,7 @@ export const TheLots = [
     bidCurrent: 1401,
     bidUser: 1401,
     deadline: 'finished',
-    geomapImageSrc: '/geomap3.png',
+    geomapImageSrc: './geomap3.png',
     notifyUser: true,
     active: false,
     requireUser: true,

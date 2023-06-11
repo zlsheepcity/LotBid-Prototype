@@ -3,7 +3,7 @@ const DotenvPlugin = require('dotenv-webpack')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const CopyWebPackPlugin = require('copy-webpack-plugin')
 
-const APPTITLE = 'APP!'
+const APPTITLE = 'Lot&Bid'
 const APPPATH_ENV    = './.env'
 const APPPATH_ENTRY  = './src/index.tsx'
 const APPPATH_HTML   = './src/index.html'
@@ -14,7 +14,7 @@ module.exports = (env) =>{
     mode: 'development',
     entry: APPPATH_ENTRY,
     output: {
-      publicPath: '/',
+      publicPath: './',
       filename: './app.js'
     },
     resolve: {
