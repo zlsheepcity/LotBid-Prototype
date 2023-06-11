@@ -4,6 +4,28 @@ export const TheLots = [
 
   {
     ...emptyLot,
+    title: 'Cirsma nr. 801',
+    place: 'Indrānu pagasts, Akmentiņi 1',
+    volume: 110,
+    distanceUser: 120,
+    bidCurrent: 0,
+    bidUser: 0,
+    deadline: '2023.07.03, 17:11',
+    geomapImageSrc: '/geomap.png',
+  },
+  {
+    ...emptyLot,
+    title: 'Cirsma nr. 797',
+    place: 'Vecskujas pagasts, Indrāni',
+    volume: 95,
+    distanceUser: 20,
+    bidCurrent: 800,
+    bidUser: 0,
+    deadline: '2023.07.03, 16:10',
+    geomapImageSrc: '/geomap3.png',
+  },
+  {
+    ...emptyLot,
     title: 'Cirsma nr. 756',
     place: 'Skujenes pagasts, Vecskujas',
     volume: 100,
@@ -27,6 +49,17 @@ export const TheLots = [
   },
   {
     ...emptyLot,
+    title: 'Cirsma nr. 610',
+    place: 'Vecskujas pagasts, Sunākste',
+    volume: 300,
+    distanceUser: 300,
+    bidCurrent: 0,
+    bidUser: 0,
+    deadline: '2023.07.02, 16:10',
+    geomapImageSrc: '/geomap2.png',
+  },
+  {
+    ...emptyLot,
     title: 'Cirsma nr. 602',
     place: 'Sunākstes pagasts, Osijas',
     volume: 180,
@@ -39,6 +72,5 @@ export const TheLots = [
     active: false,
     requireUser: true,
   },
-
 ]
 

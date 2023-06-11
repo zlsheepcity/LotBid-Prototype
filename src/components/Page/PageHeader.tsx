@@ -12,7 +12,11 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import Badge from '@mui/material/Badge';
 import AdbIcon from '@mui/icons-material/Adb';
+
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import MailIcon from '@mui/icons-material/Mail';
 
 const pages = ['Landing page', 'Participant registration'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -40,7 +44,7 @@ const Component:React.FC = () => {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -124,10 +128,24 @@ const Component:React.FC = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
+
+            <IconButton
+              color="inherit"
+              size="large"
+              children={(
+                <Badge badgeContent={1} color="error">
+                  <MailIcon />
+                </Badge>
+              )}
+              />
+
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/avatar.png" />
-              </IconButton>
+              <IconButton
+                onClick={handleOpenUserMenu}
+                color="inherit"
+                size="large"
+                children={<AccountCircle />}
+                />
             </Tooltip>
             <Menu
               sx={{ mt: '45px' }}

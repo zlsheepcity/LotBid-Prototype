@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -17,6 +18,9 @@ import Switch from '@mui/material/Switch';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 
+import WarningIcon from '@mui/icons-material/Warning';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+
 import { ILot, emptyLot } from 'Interfaces'
 import {
   LotReport,
@@ -30,15 +34,28 @@ interface IProps {
 }
 const Component:React.FC<IProps> = ({lot}) => {
   return (
-    <Card>
+    <Card
+      sx={{
+        height:'100%',
+        display:'flex',
+        flexDirection:'column',
+      }}>
       <CardMedia
-        sx={{ height:120, background:'var(--color-secondary)' }}
+        sx={{
+          height:120,
+          backgroundColor:'var(--color-secondary)',
+        }}
         image={lot.geomapImageSrc}
         title="geo map"
       />
       <LotReport lot={lot} />
-      <CardActions>
-        <Button size="small">Lot details</Button>
+      {lot.active && (
+      <CardActions sx={{mt:'auto'}}>
+        <Button
+          size="small"
+          startIcon={<OpenInNewIcon />}
+          children={'Lot page'}
+          />
         <Box sx={{ml:'auto'}}>
           <FormControlLabel
             control={<Switch defaultChecked={lot.notifyUser} />}
@@ -53,6 +70,18 @@ const Component:React.FC<IProps> = ({lot}) => {
             />
         </Box>
       </CardActions>
+      )}
+      {lot.requireUser && (
+      <CardActions sx={{mt:'auto'}}>
+        <Button
+          size="small"
+          color="error"
+          variant="contained"
+          startIcon={<WarningIcon />}
+          children={'Your action required'}
+          />
+      </CardActions>
+      )}
     </Card>
   );
 }

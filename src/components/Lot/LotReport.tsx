@@ -118,6 +118,13 @@ const LotBid:React.FC<{lot:ILot}> = ({lot}) => {
           variant="caption"
           children={`${lot.bidUser}€`}
           />
+        {bidUserExist && !bidUserWinning && (
+        <Typography
+          sx={{ml:1,color:'var(--color-negative)'}}
+          variant="caption"
+          children={`${lot.bidUser - lot.bidCurrent}`}
+          />
+        )}
       </Stack>
       )}
     </Stack>

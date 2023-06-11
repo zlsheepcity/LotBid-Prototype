@@ -17,15 +17,14 @@ import {
   LotReport,
   DesignedTitle,
 } from 'Components'
-import { TheLots as lots } from 'Src/mocks/lots'
 
-
-const lot = lots[0]
+import { TheLots as lotsAll } from 'Src/mocks/lots'
+const lots = lotsAll.filter((O:ILot)=>O.bidUser>0)
 
 const Component:React.FC = () => {
   return (
     <Container sx={{ my:3 }}>
-      <DesignedTitle children="Your bids"/>
+      <DesignedTitle children={`Related to you (${lots.length})`}/>
       <Grid container spacing={3}>
         {lots.map((lot:ILot,indexKey:any)=>(
           <Grid item xs={12} sm={6} md={4} lg={4} xl={3} key={indexKey}>
@@ -38,5 +37,5 @@ const Component:React.FC = () => {
 }
 
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-export const LotList = Component
-export default LotList
+export const LotListUserRelated = Component
+export default LotListUserRelated
