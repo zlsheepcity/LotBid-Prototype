@@ -49,7 +49,7 @@ const Component:React.FC = () => {
     <Container sx={{ my:3 }}>
       <DesignedTitle children={`Search or request`}/>
       <Grid container spacing={3}>
-        <Grid item xs={12} sm={12} md={6} xl={4}>
+        <Grid item xs={12} sm={12} md={6} xl={6}>
 
         <Grid container spacing={1}>
         <Grid item xs={6}>

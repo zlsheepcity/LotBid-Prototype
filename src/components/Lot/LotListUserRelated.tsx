@@ -27,7 +27,7 @@ const Component:React.FC = () => {
       <DesignedTitle children={`Related to you (${lots.length})`}/>
       <Grid container spacing={3}>
         {lots.map((lot:ILot,indexKey:any)=>(
-          <Grid item xs={12} sm={6} md={4} lg={4} xl={3} key={indexKey}>
+          <Grid item xs={12} sm={6} md={4} lg={4} xl={4} key={indexKey}>
             <LotCard lot={lot} />
           </Grid>
         ))}

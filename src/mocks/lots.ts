@@ -4,7 +4,7 @@ export const TheLots = [
 
   {
     ...emptyLot,
-    title: 'Cirsma nr. 801',
+    title: 'Zari Nr.5721',
     place: 'Indrānu pagasts, Akmentiņi 1',
     volume: 110,
     distanceUser: 120,
@@ -15,7 +15,7 @@ export const TheLots = [
   },
   {
     ...emptyLot,
-    title: 'Cirsma nr. 797',
+    title: 'Zari Nr.5717',
     place: 'Vecskujas pagasts, Indrāni',
     volume: 95,
     distanceUser: 20,
@@ -26,7 +26,7 @@ export const TheLots = [
   },
   {
     ...emptyLot,
-    title: 'Cirsma nr. 756',
+    title: 'Zari Nr.4756',
     place: 'Skujenes pagasts, Vecskujas',
     volume: 100,
     distanceUser: 56,
@@ -38,7 +38,7 @@ export const TheLots = [
   },
   {
     ...emptyLot,
-    title: 'Cirsma nr. 765',
+    title: 'Zari Nr.4765',
     place: 'Brīvzemnieku pagasts, Bāleliņi',
     volume: 240,
     distanceUser: 140,
@@ -49,7 +49,7 @@ export const TheLots = [
   },
   {
     ...emptyLot,
-    title: 'Cirsma nr. 610',
+    title: 'Zari Nr.4610',
     place: 'Vecskujas pagasts, Sunākste',
     volume: 300,
     distanceUser: 300,
@@ -60,7 +60,7 @@ export const TheLots = [
   },
   {
     ...emptyLot,
-    title: 'Cirsma nr. 602',
+    title: 'Zari Nr.4602',
     place: 'Sunākstes pagasts, Osijas',
     volume: 180,
     distanceUser: 21,
