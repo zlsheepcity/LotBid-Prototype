@@ -92,6 +92,13 @@ export const routes:IRoutes = {
     roleRequired: false,
     component: <PAGES.RegistrationPage />,
   },
+  LotPage: {
+    ...routeTemplate,
+    path: '/lot',
+    title: 'LotPage',
+    roleRequired: false,
+    component: <PAGES.LotPage />,
+  },
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 }; // end of routes
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~

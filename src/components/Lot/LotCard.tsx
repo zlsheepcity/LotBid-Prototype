@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'Parts/router'
 
 import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
@@ -51,11 +52,13 @@ const Component:React.FC<IProps> = ({lot}) => {
       <LotReport lot={lot} />
       {lot.active && (
       <CardActions sx={{mt:'auto'}}>
-        <Button
-          size="small"
-          startIcon={<OpenInNewIcon />}
-          children={'Lot page'}
-          />
+        <Link to="/lot">
+          <Button
+            size="small"
+            startIcon={<OpenInNewIcon />}
+            children={'Lot page'}
+            />
+        </Link>
         <Box sx={{ml:'auto'}}>
           <FormControlLabel
             control={<Switch defaultChecked={lot.notifyUser} />}

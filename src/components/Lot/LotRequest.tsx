@@ -101,7 +101,7 @@ const Component:React.FC = () => {
             />
           <Button
             startIcon={<SettingsIcon />}
-            children={'Current requests (2)'}
+            children={'Notification settings'}
             />
           </Stack>
         </Grid>

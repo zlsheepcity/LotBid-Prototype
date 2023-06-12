@@ -20,6 +20,7 @@ import MailIcon from '@mui/icons-material/Mail';
 
 const menuPages = [
   {title:'Landing page',path:'/landing'},
+  {title:'Lot page',path:'/lot'},
   {title:'Participant registration',path:'/registration'},
 ]
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
