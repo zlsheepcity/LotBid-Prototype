@@ -16,6 +16,7 @@ export * from './Registration/RegistrationForm'
 export * from './Registration/FormPartContact'
 export * from './Registration/FormPartCompany'
 export * from './Registration/FormPartPayment'
+export * from './Notification/NotificationList'
 // UI components
 export * from './Designed/DesignedTitle'
 

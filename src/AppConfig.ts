@@ -1,6 +1,6 @@
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 const AppConfigCore = {
-  v: '1.2', // version
+  v: '6.12', // version
   developerMode: true,
 };
 

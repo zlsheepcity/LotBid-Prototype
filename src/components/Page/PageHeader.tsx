@@ -1,5 +1,9 @@
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
 import React from 'react'
-import { Link } from 'Parts/router'
+
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -18,6 +22,14 @@ import AdbIcon from '@mui/icons-material/Adb';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+import appConfig from 'Src/AppConfig'
+import { Link } from 'Parts/router'
+
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
 const menuPages = [
   {title:'Landing page',path:'/landing'},
   {title:'Lot page',path:'/lot'},
@@ -25,6 +37,7 @@ const menuPages = [
 ]
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
+//~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 const Component:React.FC = () => {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
@@ -47,6 +60,7 @@ const Component:React.FC = () => {
   };
 
   return (
+    <Box>
     <AppBar position="static">
       <Container>
         <Toolbar disableGutters>
@@ -141,15 +155,20 @@ const Component:React.FC = () => {
 
           <Box sx={{ flexGrow: 0 }}>
 
-            <IconButton
-              color="inherit"
-              size="large"
-              children={(
-                <Badge badgeContent={1} color="error">
-                  <MailIcon />
-                </Badge>
-              )}
-              />
+            <Link to="/notification" style={{
+                textDecoration:'none',
+                color:'inherit',
+              }}>
+              <IconButton
+                color="inherit"
+                size="large"
+                children={(
+                  <Badge badgeContent={1} color="error">
+                    <MailIcon />
+                  </Badge>
+                )}
+                />
+            </Link>
 
             <Tooltip title="Open settings">
               <IconButton
@@ -185,6 +204,17 @@ const Component:React.FC = () => {
         </Toolbar>
       </Container>
     </AppBar>
+    
+    <Container>
+      <Typography
+        variant="overline"
+        component="span"
+        children={`version ${appConfig.v}`}
+        sx={{opacity:0.4}}
+        />
+    </Container>
+
+    </Box>
   )
 }
 

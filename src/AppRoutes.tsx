@@ -92,6 +92,13 @@ export const routes:IRoutes = {
     roleRequired: false,
     component: <PAGES.RegistrationPage />,
   },
+  Notification: {
+    ...routeTemplate,
+    path: '/notification',
+    title: 'Notification',
+    roleRequired: false,
+    component: <PAGES.NotificationPage />,
+  },
   LotPage: {
     ...routeTemplate,
     path: '/lot',
