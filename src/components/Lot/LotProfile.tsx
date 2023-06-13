@@ -41,7 +41,7 @@ const lot = lots[3]
 
 const Component:React.FC = () => {
   return (
-    <Container sx={{ my:3 }}>
+    <Container>
       <DesignedTitle children="Lot page"/>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={6} md={8} lg={8}>

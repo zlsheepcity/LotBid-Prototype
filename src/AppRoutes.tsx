@@ -106,6 +106,13 @@ export const routes:IRoutes = {
     roleRequired: false,
     component: <PAGES.LotPage />,
   },
+  Examples: {
+    ...routeTemplate,
+    path: '/examples',
+    title: 'Examples',
+    roleRequired: false,
+    component: <PAGES.ExamplesPage />,
+  },
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 }; // end of routes
 //~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~

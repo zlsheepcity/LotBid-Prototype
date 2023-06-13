@@ -24,7 +24,7 @@ const lot = lots[0]
 
 const Component:React.FC = () => {
   return (
-    <Container sx={{ my:3 }}>
+    <Container>
       <DesignedTitle children="Your bids"/>
       <Grid container spacing={3}>
         {lots.map((lot:ILot,indexKey:any)=>(

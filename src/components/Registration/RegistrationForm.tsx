@@ -62,7 +62,7 @@ const Component:React.FC = () => {
   };
 
   return (
-    <Container sx={{ my:3 }}>
+    <Container>
     <DesignedTitle children={`Participant registration`}/>
     <Box sx={{ maxWidth: 800 }}>
       <Stepper activeStep={activeStep} orientation="vertical">

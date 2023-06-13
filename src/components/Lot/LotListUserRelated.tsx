@@ -23,7 +23,7 @@ const lots = lotsAll.filter((O:ILot)=>O.bidUser>0)
 
 const Component:React.FC = () => {
   return (
-    <Container sx={{ my:3 }}>
+    <Container>
       <DesignedTitle children={`Related to you (${lots.length})`}/>
       <Grid container spacing={3}>
         {lots.map((lot:ILot,indexKey:any)=>(
